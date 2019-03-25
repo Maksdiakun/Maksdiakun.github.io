@@ -1,266 +1,351 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>test task JavaScript advanced</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="app-container pt-40">
-    <div class="top-cart">
-        <div class="top-cart-info">
-            <div class="container top-cart-info-container">
-                <span class="top-cart-info__item">
-                     Товаров в корзине - <span class="red-info" id='quantity'>XXX</span>,
-                      на сумму <span class="red-info" id='sum' >XXX</span> грн</span>
-                <button class="btn-check" id='order'>Оформить заказ</button>
-            </div>
-        </div><!-- /.top-cart-info -->
-
-    </div><!-- /.top-cart -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
 
 
+		<title>Sneakers</title>
+		
 
-    <header class="top-header">
-        <div class="container">
-            <h1>Welcome to our site</h1>
-        </div>
-    </header>
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	
 
-    <div class="wrap">
-        <section class="container">
-            <div class="filter-box">
-                <div class="select-box">
-                    <label class="filter-label">Категория</label>
-                    <select class="select-control" id="select-type">
-                        <option value="0">Все</option>
-                        <option value="1">Завтраки</option>
-                        <option  value="2">Первые блюда</option>
-                        <option  value="3">Гарниры</option>
-                    </select>
-                </div><!-- /.select-box -->
-                <div class="price-select-box">
-                    <label class="filter-label">Цена</label>
-                    <select class="select-control "  id='select-price' >
-                        <option value="0">Все</option>
-                        <option value="30">До 30 грн</option>
-                        <option value="50">До 50 грн</option>
-                        <option value="100">До 100 грн</option>
-                        <option value="150">До 150 грн</option>
-                    </select>
-                </div><!-- /.price-select-box -->
-            </div><!-- /filter-box-->
+	
+		<!-- icon library -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="style/main.css" rel="stylesheet">
 
+	</head>
 
+	<body>
 
-            <div class="products-box grid-box">
+		<header>
+			<div class="container">
+				<div class="header-top ">
+		  			<div class="main-logo">
+		  				<a href="index.html">Sneakers</a>
+		  			</div>
+		  			<div class="rightsection">
+			  			<div class="search">
+			  			<div id="wraps" >
 
-                <div class="product-box__item " data-type=1 data-price=25>
-                    <h3 class="product-box__title">Овсяная каша с фруктами</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im1.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>25 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number" id='first' > Кол
-                        </div>
-                        <button class="product-box__btn id='add' ">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=1 data-price=25>
-                    <h3 class="product-box__title">Яичница глазунья с овощами на сковородке</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im2.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>25 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item " data-type=1 data-price=30>
-                    <h3 class="product-box__title">Сет азербайджанский завтрак</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im3.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>30 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=1 data-price=45>
-                    <h3 class="product-box__title">Яичница с помидорами по-бакински</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im4.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>45 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=3 data-price=45>
-                    <h3 class="product-box__title">Сырники со сметаной</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im5.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>45 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=2 data-price=50>
-                    <h3 class="product-box__title">Шпинатный крем-суп</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im6.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>50 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=2 data-price=85>
-                    <h3 class="product-box__title">Суп Пити</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im7.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>85 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=2 data-price=95>
-                    <h3 class="product-box__title">Борщ украинский</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im8.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>95 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=2 data-price=100>
-                    <h3 class="product-box__title">Суп Кюфта Бозбаш</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im9.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>100 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=3 data-price=125>
-                    <h3 class="product-box__title">Картофель фри</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im10.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>125 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=3 data-price=135>
-                    <h3 class="product-box__title">Картофель по-домашнему</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im11.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>135 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-                <div class="product-box__item" data-type=3 data-price=150>
-                    <h3 class="product-box__title">Рис с овощами</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="i/im12.jpg">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>150 грн.</p>
-                        <div class="qty">
-                            <input class="qty__item" type="number"> Кол
-                        </div>
-                        <button class="product-box__btn">Добавить</button>
-
-                    </div>
-                </div>
-
-
-            </div><!-- /product-box-->
-
-
-        </section>
+						  <form action="" autocomplete="off">
+						  <input id="search"  name="search" type="text" placeholder="Search"><input  id="wrap"  id="search_submit" value="Rechercher" type="submit" >
+						  <ul class="list-group" id="result">
+						  </form>
+						</div>
+						 	
+						</div>
+			  			
+			  			<div class="login" id="login">
+			  				LOGIN or REGISTER
+			  			</div>
+			  		</div>	
+		  		</div>		
+			</div>
+		</header>
+	
+			
+				<div class="container ">
+					<div class="navigation">
+						<a href="#" class="menu-toggle col-3">
+                  <span class="line"></span>
+              </a>
+              <div class="menu ">
+                  <ul class="navigationx">
+                      <li class="navigation__link"><a href="#">Home</a></li>
+                      <li class="navigation__link"><a href="#">Products</a></li>
+                      <li class="navigation__link"><a href="#">About</a></li>
+                      <li class="navigation__link"><a href="#">Pages</a></li>
+                      <li class="navigation__link"><a href="#">Blog</a></li>
+                      <li class="navigation__link"><a href="#">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="search-2 col-3">
+		
+				<input type="search" name="q" class="search-text" placeholder="Search..." autocomplete="off">
+				</div>
+				
+							<div class="big col-lg-2">
+							<div id='star'class="cart col-lg-6 ">
+								<i class="far fa-star"></i>
+								<div class="counter">
+									10
+								</div>
+							</div>
+							<div class="cart col-lg-6">
+								<i class="fas fa-cart-arrow-down"></i>
+								<div class="counter">
+									0
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			
+	
+				
+  <div class="slide1 slid">
+              
+   			<img src="img/marc-groth-545326-unsplash.jpg">
     </div>
+  
 
-    <footer class="bottom-footer bg-beetroot py-1">
-        <div class="container">
-            <div class="footer-row">
-                <div class="col-md-3">Beetroot &copy;2018</div>
-                <div class="col-md-9 text-center">
-                    <a target="_blank" href="https://academy.beetroot.se/?">Bettroot academy  2018</a>
-                </div>
+
+   
+  </div>
+					
+					
+					</div>
+				</div>
+
+		<div class="select-cont">
+				<div class="container">
+					<div class="row select-row" >
+						<div class="text-select col-lg-3">
+							Shop by
+						</div>
+							<div class=" select-wrap col-7 col-md-3">
+								<div  id="br"class="select" tabindex="1">
+  <input class="selectopt" name="Brands" type="radio" id="opt1" checked>
+  <label for="opt1" class="option">Brands</label>
+  <input class="selectopt" name="Brands" type="radio" id="opt2">
+  <label for="opt2" class="option">BRAND-1</label>
+  <input class="selectopt" name="Brands" type="radio" id="opt3">
+  <label for="opt3" class="option">BRAND-2</label>
+  <input class="selectopt" name="Brands" type="radio" id="opt4">
+  <label for="opt4" class="option">BRAND-3</label>
+</div>
+							</div>
+							<div  class="col-md-3 select-wrap col-7">
+								<div id="cat" class="select" tabindex="1">
+  <input class="selectopt" name="Categories" type="radio" id="opt4a" checked>
+  <label for="opt4a" class="option">Categories</label>
+  <input class="selectopt" name="Categories" type="radio" id="opt5">
+  <label for="opt5" class="option">MEN</label>
+  <input class="selectopt" name="Categories" type="radio" id="opt6">
+  <label for="opt6" class="option">KIDS</label>
+  <input class="selectopt" name="Categories" type="radio" id="opt7">
+  <label for="opt7" class="option">WOMEN</label>
+</div>
+							</div>
+							
+							<div class="select-wrap col-7 col-md-3">
+								<div class="select" tabindex="1">
+  <input class="selectopt" name="Price" type="radio" id="opt9" checked>
+  <label for="opt9" class="option">Price</label>
+  <input class="selectopt" name="Price" type="radio" id="opt10">
+  <label for="opt10" class="option">Highest</label>
+  <input class="selectopt" name="Price" type="radio" id="opt11">
+  <label for="opt11" class="option">Lowest</label>
+  
+</div>
+							</div>
+							</div>
+					</div>		
+				</div>			
+			</div>
+
+
+		
+		<div class="main-part">
+			<div class="container">
+				<div class="row head-items">
+					<div class="header-new" >New arrivals </div>
+					<div class="btn-show">Show All</div>
+				</div>
+				<div class="row sps ">
+					<div class="item col-lg-3 col-md-3 col-8 ">
+						<img id="sss" src="img/Sneakers-PNG-Image.png">
+						<div class="price-btn ii ">
+											$250
+										</div>
+						<div class="item-footer">
+									<p>Interact</p>
+									<div class="footer-menu">
+												<i class="far fa-eye"></i>
+												<i class="far fa-star"></i>
+												<i class="far fa-share-square"></i>
+												<i class="fas fa-cart-arrow-down"></i>
+											</div>
+								</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-8 item">
+						<img id="sss" src="img/Sneakers-PNG-Transparent-Image.png">
+						<div class="price-btn ii ">
+											$180
+										</div>
+										<div class="price-btn top-btn ">
+											ON SALE!
+										</div>
+						<div class="item-footer">
+									<p>Interact</p>
+									<div class="footer-menu">
+												<i class="far fa-eye"></i>
+												<i class="far fa-star"></i>
+												<i class="far fa-share-square"></i>
+												<i class="fas fa-cart-arrow-down"></i>
+											</div>
+								</div>
+					</div>
+					<div class="col-lg-3 col-md-3  col-8 item">
+						<img id="sss" src="img/Sneakers-Transparent-PNG.png">
+						<div class="price-btn ii ">
+											$200
+										</div>
+						<div class="item-footer">
+									<p>Interact</p>
+									<div class="footer-menu">
+												<i class="far fa-eye"></i>
+												<i class="far fa-star"></i>
+												<i class="far fa-share-square"></i>
+												<i class="fas fa-cart-arrow-down"></i>
+											</div>
+								</div>
+					</div>
+				</div>
+				<div class="row head-items">
+					<div class="header-new" >Best sellers of the month</div>
+					<div class="btn-show">Show All</div>
+				</div>
+				<div class="row sps sps-bot ">
+					<div class="item col-lg-3 col-md-3 col-8 ">
+						<img id="sss" src="img/Sneakers-PNG-File.png">
+						<div class="price-btn ii ">
+											$180
+										</div>
+						<div class="item-footer">
+									<p>Interact</p>
+									<div class="footer-menu">
+												<i class="far fa-eye"></i>
+												<i class="far fa-star"></i>
+												<i class="far fa-share-square"></i>
+												<i class="fas fa-cart-arrow-down"></i>
+											</div>
+								</div>
+					</div>
+					<div class="col-lg-3 col-md-3  col-8 item">
+						<img id="sss" src="img/Sneakers-Background-PNG.png">
+						<div class="price-btn ii ">
+											$360
+										</div>
+						<div class="item-footer">
+									<p >Interact</p>
+									<div class="footer-menu">
+												<i class="far fa-eye"></i>
+												<i class="far fa-star"></i>
+												<i class="far fa-share-square"></i>
+												<i class="fas fa-cart-arrow-down"></i>
+											</div>
+								</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-8 item">
+					
+						<img id="add" src="img/Sneakers-PNG-Picture.png">
+						<div class="price-btn ii ">
+											$100
+										</div>
+						<div class="item-footer">
+									<p>Interact</p>
+									<div class="footer-menu">
+												<i class="far fa-eye"></i>
+												<i class="far fa-star"></i>
+												<i class="far fa-share-square"></i>
+												<i class="fas fa-cart-arrow-down"></i>
+											</div>
+								</div>
+					</div>
+				</div>
+				
+					</div>
+				</div>
+			</div> 
+		</div>
+		<div class="footer">
+			<div class="container">
+				<div class="row row-cont ">
+					<div class=" text-widget col-lg-5 col-md-7 col-9">
+						<h5>TEXT WIDGET</h5>
+						<p>Sneakers are shoes primarily designed for sports or other forms of physical exercise, but which are now also widely used for everyday wear. The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather, synthetic substitutes or cloth.</p>
+					</div>
+					<div class=" hide-el col-lg-3">
+						<h5 class="widget-name">TWITTER WIDGET</h5>
+					<a class="twitter-timeline" data-width="250" data-height="200" data-theme="dark" data-link-color="#19CF86" href="https://twitter.com/Twitter?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="1">Tweets by Twitter</a> 
+					</div>
+					<div class="col-lg-4 col-md-5 col-9" id="z" >
+					<h5 class="widget-name">	FLICKR WIDGET</h5>
+			
+	<div id="flickr_badge_wrapper">
+	<script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=6&display=latest&size=s&layout=x&source=user&user=29780691@N06">	
+				</script>
+				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="row bot-text">
+						<div class=" col-sm-6 col-md-6 col-10 email">
+							<div><input type="email" class="email-place" placeholder="Enter email for newsletter" ></div>
+							<div class="next-btn">
+								<img src="img/Arrow_Icon.png">
+							</div>
+						</div>
+						<div class=" social-icons col-sm-6 col-8 col-md-6">
+					
+								<a href="#" class="fa fa-facebook"></a>
+								<a href="#" class="fa fa-twitter"></a>
+								<a href="#" class="fa fa-google"></a>
+								<a href="#" class="fa fa-linkedin"></a>
+								<a href="#" class="fa fa-flickr"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		<!-- pop up -->
+	
+ <div id="list-builder"></div>
+        <div id="popup-box">
+            <div id="popup-box-content">
+            	 <p id="popup-close">Close</p>
+                <h1>Login or Register</h1>
+              
+                <form id="popup-form" action="https://email_list_service_api.com">
+                    <input type="hidden" name="list" value="key_list_etc" />
+                    <input type="text" name="name" placeholder="Your Login" /><br/>
+                    <input type="password" name="password" placeholder="Password" /><br/>
+                    <button type="button" name="subscribe">Login</button>
+                     <button type="button" name="subscribe">Register</button>
+                </form>
             </div>
         </div>
-    </footer>
-</div><!-- /.app-container -->
-                        <!--pop up -->
-
-        <div id="pop-up">
-            <div id="close">
-                close
-            </div>
-            <label for="name">Name:
-                <input type="name" name="name" id="name" value="" tabindex="1" />
-            </label>
-            <label for="email">Email:
-                <input type="email" name="email" id="email" value="" tabindex="1"  />
-            </label>
-            <button id="send">Send</button>
-        </div>
- 
 
 
-<script type="text/javascript" src="js/main.js"></script>
-</body>
+
+
+
+
+
+
+
+
+
+
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-3.2.1.slim.min.js"><\/script>')</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="js/main.js"></script>
+	</body>
+
 </html>
